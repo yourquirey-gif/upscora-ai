@@ -1,15 +1,16 @@
 # UPSCora AI
 
-AI-powered UPSC preparation platform for Prelims, Mains, notes, tests, answer evaluation and personalized performance.
+Premium AI-powered UPSC preparation platform.
 
-## Stack
-- Next.js
-- React
-- Tailwind CSS
-- MongoDB (planned)
-- OpenRouter (planned)
-- Vercel
+## Current foundation
+- Premium responsive landing page
+- Login and Sign up routes
+- Dashboard foundation
+- Next.js App Router + Tailwind CSS v4
+- Environment placeholders for MongoDB, auth and OpenRouter
 
-## Development
-npm install
-npm run dev
+## Planned modules
+Prelims MCQ engine, negative marking, PYQs, Mains answer evaluation, PDF/image note ingestion, AI Mentor, subject-wise tests, performance analytics and personalized revision.
+
+## Setup
+Copy `.env.example` to `.env.local`, add server-side secrets, then run `npm install && npm run dev`.
