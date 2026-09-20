@@ -1,0 +1,4 @@
+import {NextResponse} from "next/server";
+import {connectDB} from "@/lib/mongodb";
+import {Test} from "@/models/Test";
+export async function GET(_:Request,{params}:{params:Promise<{id:string}>}){await connectDB();const{id}=await params;const item=await Test.findOne({_id:id,active:true}).populate("questionIds").lean();if(!item)return NextResponse.json({error:"Test not found"},{status:404});return NextResponse.json({item});}
