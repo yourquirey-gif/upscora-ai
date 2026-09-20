@@ -1,0 +1,3 @@
+import mongoose,{Schema,models,model} from "mongoose";
+const NoteSchema=new Schema({userId:{type:Schema.Types.ObjectId,ref:"User",required:true,index:true},name:{type:String,required:true},fileType:{type:String,required:true},fileUrl:{type:String},extractedText:{type:String},topics:[{type:String}],status:{type:String,enum:["uploaded","processing","ready","failed"],default:"uploaded"},createdAt:{type:Date,default:Date.now}},{versionKey:false});
+export const Note=models.Note||model("Note",NoteSchema);
