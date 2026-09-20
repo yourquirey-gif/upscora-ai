@@ -1,0 +1,3 @@
+import mongoose,{Schema,models,model} from "mongoose";
+const TestAttemptSchema=new Schema({userId:{type:Schema.Types.ObjectId,ref:"User",required:true,index:true},testType:{type:String,enum:["prelims","mains"],required:true},title:{type:String,required:true},score:{type:Number,default:0},maxScore:{type:Number,default:0},accuracy:{type:Number,default:0},correct:{type:Number,default:0},wrong:{type:Number,default:0},unattempted:{type:Number,default:0},answers:{type:Schema.Types.Mixed},completedAt:{type:Date,default:Date.now},},{versionKey:false});
+export const TestAttempt=models.TestAttempt||model("TestAttempt",TestAttemptSchema);
