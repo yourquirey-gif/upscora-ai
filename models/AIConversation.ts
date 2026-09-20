@@ -1,0 +1,3 @@
+import mongoose,{Schema,models,model} from "mongoose";
+const AIConversationSchema=new Schema({userId:{type:Schema.Types.ObjectId,ref:"User",required:true,index:true},messages:[{role:{type:String,enum:["user","assistant"],required:true},text:{type:String,required:true},createdAt:{type:Date,default:Date.now}}],updatedAt:{type:Date,default:Date.now}},{versionKey:false});
+export const AIConversation=models.AIConversation||model("AIConversation",AIConversationSchema);
