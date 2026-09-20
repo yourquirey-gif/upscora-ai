@@ -1,0 +1,3 @@
+import mongoose,{Schema,models,model} from "mongoose";
+const QuestionSchema=new Schema({type:{type:String,enum:["prelims","mains"],required:true,index:true},source:{type:String,enum:["pyq","expected","admin"],required:true,index:true},year:{type:Number},subject:{type:String,required:true,index:true},topic:{type:String,index:true},question:{type:String,required:true},options:[String],correctAnswer:{type:Number},explanation:{type:String},marks:{type:Number},negativeMarking:{type:Number,default:0},difficulty:{type:String,enum:["easy","moderate","hard"],default:"moderate"},active:{type:Boolean,default:true}},{timestamps:true,versionKey:false});
+export const Question=models.Question||model("Question",QuestionSchema);
