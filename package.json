@@ -1,0 +1,7 @@
+{
+  "name":"upscora-ai",
+  "version":"0.1.0",
+  "private":true,
+  "scripts":{"dev":"next dev","build":"next build","start":"next start","lint":"next lint"},
+  "dependencies":{"@hookform/resolvers":"latest","lucide-react":"latest","next":"latest","next-themes":"latest","react":"latest","react-dom":"latest","zod":"latest"}
+}
