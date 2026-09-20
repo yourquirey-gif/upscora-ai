@@ -1,0 +1,3 @@
+import mongoose,{Schema,models,model} from "mongoose";
+const MainsSubmissionSchema=new Schema({userId:{type:Schema.Types.ObjectId,ref:"User",required:true,index:true},question:{type:String,required:true},answer:{type:String},fileUrl:{type:String},marks:{type:Number},maxMarks:{type:Number,default:10},evaluation:{type:Schema.Types.Mixed},status:{type:String,enum:["submitted","evaluating","evaluated"],default:"submitted"},submittedAt:{type:Date,default:Date.now}},{versionKey:false});
+export const MainsSubmission=models.MainsSubmission||model("MainsSubmission",MainsSubmissionSchema);
